@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 a{
     text-decoration: none;
+}
+
+
+/* -------- NAV ------- */
+nav{
+    height: 10vh;
+    width: 100%;
+    padding: 0 10rem;
+    position:fixed;
+    font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 5px 10px #2C272E;
+    background-color: #F1F1F199;
+    backdrop-filter: blur(20px);
 }
 
 
@@ -24,11 +42,15 @@ a{
     align-items: center;
     gap: 2rem;
 
-    padding: 0 10rem;
+    padding: 5rem 10rem 0;
     height: 90vh;
+}
 
-    font-family:'Courier New', Courier, monospace;
+.hero-text{
+    padding-right: 5rem;
+    font-family: 'Courier Prime', monospace;;
     font-size: 1.5rem;
+    text-align: justify
 }
 
 .hero, i {
@@ -42,7 +64,7 @@ a{
 
 /* -------- MAIN ------- */
 main{
-    background-color: #2C272E   ;
+    background-color: #E8D1A9;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -50,7 +72,7 @@ main{
     padding: 0 10rem;
     height: 90vh;
 
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier Prime', monospace;;
     font-size: 1.5rem;
 }
 
@@ -63,11 +85,11 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    gap: 2rem;
 
     padding: 5rem 10rem;
 
 
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier Prime', monospace;
     font-size: 1.5rem;
 }
