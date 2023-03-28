@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+
+/* -------- HERO ------- */
+
+.hero-container{
+    background-image: url("img/hero-background.jpg");
+    background-color: #FDB827;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 0 10rem;
+    height: 90vh;
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
+
+.hero, i {
+    color: black;
+}
+.hero-photo{
+    border-radius: 50%;
+    width: 25rem;
+}
+
+
+/* -------- MAIN ------- */
+main{
+    background-color: #2C272E   ;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 0 10rem;
+    height: 90vh;
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
+
+
+/* -------- FOOTER ------- */
+
+footer{
+    background-color: #FDB827;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    padding: 5rem 10rem;
+
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
