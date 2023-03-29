@@ -11,18 +11,4 @@ window.addEventListener('DOMContentLoaded', () =>{
         }
     });
 
-
-    // email POPUP
-    let emailPopup = document.querySelector('.email-popup');
-    let btn = document.querySelector('.email-btn');
-    let btnClose = document.querySelector('.email-popup-close-btn');
-
-    btn.onclick = function(){
-        emailPopup.style.display = 'block';
-    }
-    btnClose.onclick = function(){
-        emailPopup.style.display = 'none';
-        
-    }
-
 });

@@ -10,46 +10,6 @@ html {
     font-size: 100%;
 }
 
-
-/* -------- NAV ------- */
-.navbar{
-    min-height: 10vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position:fixed;
-    font-size: 2rem;
-    padding: 0.5rem 10rem;
-    background-color: #F1F1F1;
-    transition: background-color 0.5s ease; 
-}
-.navbar.sticky{
-    background-color: #F1F1F155;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 5px 10px #2C272E;
-}   
-nav > ul{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-}
-
-.home-logo{
-    margin-right: auto;
-}
-.social-link{
-    margin-left: 1.5rem;
-}
-.email-btn{
-    cursor: pointer;
-}
-.navbar a{
-    text-decoration: none;
-    color: black;
-}
-
 /* -------- HERO ------- */
 
 .hero-container{
@@ -124,9 +84,14 @@ footer > ul{
     justify-content: center;
 }
 footer a{
-    font-size: 2rem;
     text-decoration: none;
+}
+footer i{
+    font-size: 2rem;
     color: #FDB827;
+}
+footer i:hover{
+    color: #F1F1F1;
 }
 .footer-developer{
     margin-right: auto;
@@ -136,39 +101,3 @@ footer a{
 }
 
 
-/* -------- email POPUP ------- */
-.email-popup{
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 25%;
-    top: 25%;
-    width: 50%;
-    height: 5rem;
-    overflow: auto;
-    background-color:#F1F1F1;
-    border: 1px solid black;
-    box-shadow: 10px 10px black;    
-}
-.email-popup-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding-bottom: 2rem;
-    font-family:'Courier Prime', monospace;
-    font-size: 70%;
-}
-.email-popup-close-btn{
-    color:black;
-    float: right;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-left: auto;
-    margin-top: 0;
-    cursor: pointer;
-}
-.email-color{
-    color: #21209C;
-}
