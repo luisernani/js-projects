@@ -14,7 +14,7 @@ html {
 
 .hero-container{
     background-image: url("img/hero-background.jpg");
-    background-color: #FDB827;
+    background-color: #FFE162;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,45 +59,6 @@ main{
 
     font-family: 'Courier Prime', monospace;
     font-size: 1.5rem;
-}
-
-
-/* -------- FOOTER ------- */
-
-footer{
-    background-color: black;
-    color: #FDB827;
-    min-height: 20vh;
-    padding: 5vh 10rem;
-    font-family: 'Courier Prime', monospace;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-footer > ul{
-    width: 100%;
-    list-style-type: none;
-    color: #FDB827;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-footer a{
-    text-decoration: none;
-}
-footer i{
-    font-size: 2rem;
-    color: #FDB827;
-}
-footer i:hover{
-    color: #F1F1F1;
-}
-.footer-developer{
-    margin-right: auto;
-}
-.footer-social-link{
-    margin-left: 1.5rem;
 }
 
 

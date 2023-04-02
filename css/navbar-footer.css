@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+/* -------- NAV ------- */
+.navbar{
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    font-size: 2rem;
+    padding: 0.5rem 10rem;
+    background-color: #F1F1F1;
+    transition: background-color 0.5s ease; 
+}
+.navbar.sticky{
+    background-color: #F1F1F155;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 10px #2C272E;
+}   
+nav > ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.home-logo{
+    margin-right: auto;
+}
+.social-link{
+    margin-left: 1.5rem;
+}
+.email-btn{
+    cursor: pointer;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+.navbar i:hover{
+    color: #21209C;
+}
+
+/* -------- FOOTER ------- */
+
+footer{
+    background-color: black;
+    color: #FFE162;
+    min-height: 20vh;
+    padding: 5vh 10rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer > ul{
+    width: 100%;
+    list-style-type: none;
+    color: #FFE162;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer a{
+    text-decoration: none;
+}
+footer i{
+    font-size: 2rem;
+    color: #FFE162;
+}
+footer i:hover{
+    color: #F1F1F1;
+}
+.footer-developer{
+    margin-right: auto;
+}
+.footer-social-link{
+    margin-left: 1.5rem;
+}
+
+
