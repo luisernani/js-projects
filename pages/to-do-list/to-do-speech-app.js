@@ -4,9 +4,8 @@
     const recognition = new SpeechRecognition();
     recognition.interimResults = true;
 
-    let p = document.createElement('p');
-    const words = document.querySelector('.to-do-container');
-    words.appendChild(p);
+    const inputBox = document.querySelector('.to-do-input');
+    const speechBtn = document.querySelector(".to-do-speech-btn"  );
 
     recognition.addEventListener('result', e =>{
         const transcript = Array.from(e.results)
@@ -16,10 +15,7 @@
 
             console.log(transcript);
 
-        p.textContent = transcript;
+        inputBox.value = transcript;
     })
 
-    
-
-recognition.addEventListener('end', recognition.start);
-recognition.start();
+speechBtn.addEventListener('click', recognition.start());

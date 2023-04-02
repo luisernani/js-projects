@@ -15,7 +15,7 @@ html {
 header{
     padding: 15vh 10rem 0;
     background-color: #FFE162;
-    color: #21209C;
+    color: black;
 }
 header > h1{
     text-align: center;

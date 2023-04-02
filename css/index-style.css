@@ -13,12 +13,13 @@ html {
 /* -------- HERO ------- */
 
 .hero-container{
-    background-image: url("img/hero-background.jpg");
+    background-image: url("/img/coding-backgroung-opacity.png");
     background-color: #FFE162;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
 
 .hero{
     display: flex;
