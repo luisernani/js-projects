@@ -32,14 +32,13 @@ nav > ul{
     align-items: center;
     justify-content: center;
     list-style-type: none;
+    gap: 1rem;
 }
 
 .home-logo{
     margin-right: auto;
 }
-.social-link{
-    margin-left: 1.5rem;
-}
+
 .email-btn{
     cursor: pointer;
 }
@@ -71,6 +70,7 @@ footer > ul{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 footer a{
     text-decoration: none;
@@ -85,8 +85,6 @@ footer i:hover{
 .footer-developer{
     margin-right: auto;
 }
-.footer-social-link{
-    margin-left: 1.5rem;
-}
+
 
 
