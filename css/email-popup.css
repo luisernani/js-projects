@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
-/* -------- email POPUP ------- */
+/* -------- empty-input POPUP ------- */
 .email-popup{
     display: none;
     position: fixed;
@@ -12,7 +12,8 @@
     overflow: auto;
     background-color:#F1F1F1;
     border: 1px solid black;
-    box-shadow: 10px 10px black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
 }
 .email-popup-text{
     display: flex;
@@ -32,6 +33,7 @@
     margin-left: auto;
     margin-top: 1rem;
     cursor: pointer;
+    
 }
 .email-color{
     color: #21209C;
@@ -41,5 +43,5 @@
 }
 
 .email-popup-close-btn:active{
-    transform: translateY(4px);
+    transform: translateY(1rem);
 }

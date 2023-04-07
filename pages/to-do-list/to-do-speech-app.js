@@ -1,5 +1,4 @@
-    
-    
+        
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.interimResults = true;
@@ -15,11 +14,11 @@
             .map(results => results.transcript)
             .join('');
         inputBox.value = transcript;
-        speechBtn.style.backgroundColor = '';
+        speechBtn.classList.remove("rec");
     });
 
     speechBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        speechBtn.style.backgroundColor = 'red';
+        speechBtn.classList.add("rec")
         recognition.start();
     })

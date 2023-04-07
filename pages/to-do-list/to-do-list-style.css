@@ -37,7 +37,6 @@ main{
     min-height: 70vh;
     width: 70%;
     border-radius: 1rem;
-    /* text-align: center; */
 }
 
 form{
@@ -53,19 +52,46 @@ form{
     font-size: 1.5rem;
     width: 100%;
     font-family:'Courier Prime', monospace; 
+    border: 1px solid black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
 }
 
 /* -------- Buttons ------- */
-button{
-    min-height: 3rem;
-    min-width: 3rem;
-}
 button i{
     pointer-events: none;
 }
+button{
+    min-height: 3rem;
+    min-width: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
+    cursor: pointer;
+    
+}
+.to-do-add-btn:hover{
+    background-color: #91C483;
+}
+.to-do-speech-btn:hover{
+    background-color: #FF6464;
+}
+.to-do-speech-btn.rec{
+    background-color: #FF6464;
+    transform: translateY(1rem);
+}
+.to-do-btn-done:hover{
+    background-color: #91C483;
+}
+.to-do-btn-delete:hover{
+    background-color:#FF6464;
+}
+button:active{      
+    transform: translateY(.5rem) ;
+}
 /* -------- To Do Task ------- */
 .to-do-task-box{
-    
     display: flex;
     min-height: 2rem;
     font-size: 1rem;
@@ -77,15 +103,72 @@ button i{
     font-family:'Courier Prime', monospace; 
     background-color: white;
     width: 100%;
+    padding: .5rem .5rem;
     display: flex;
     align-items: center;
     margin-right: auto;
+    border: 1px solid black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
 }
-/* .to-do-container{
+.to-do-container{
     display: flex;
-} */
+    flex-direction: column-reverse;
+}
 
 .to-do-task-box > button{
     min-height:2rem;
     min-width: 2rem;
+    background-color:white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+/* -------- email POPUP ------- */
+.empty-input-popup{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 7rem;
+    overflow: auto;
+    background-color:#F1F1F1;
+    border: 1px solid black;
+    box-shadow: 10px 10px black;
+}
+.empty-input-popup-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    font-family:'Courier Prime', monospace;
+    font-size: 70%;
+    margin-bottom: 1rem;
+}
+.empty-input-close-btn{
+    color:black;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.empty-input-color{
+    color: #21209C;
+}
+.empty-input-close-btn:hover{
+    color: #D72323;
+}
+
+.empty-input-close-btn:active{
+    transform: translateY(4px);
 }

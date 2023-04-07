@@ -1,5 +1,3 @@
-
-
 window.addEventListener('DOMContentLoaded', ()=> {
     const emailPopup = document.querySelector('.email-popup');
     const emailBtn = document.querySelectorAll('.email-btn');

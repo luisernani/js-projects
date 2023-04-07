@@ -13,7 +13,7 @@ html {
 /* -------- HERO ------- */
 
 .hero-container{
-    background-image: url("/img/coding-backgroung-opacity.webp");
+    background-image: url("../img/coding-backgroung-opacity.webp");
     background-color: #FFE162;
     background-repeat: no-repeat;
     background-size: cover;
