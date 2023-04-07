@@ -60,7 +60,9 @@ button{
     min-height: 3rem;
     min-width: 3rem;
 }
-
+button i{
+    pointer-events: none;
+}
 /* -------- To Do Task ------- */
 .to-do-task-box{
     
