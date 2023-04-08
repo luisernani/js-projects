@@ -1,3 +1,5 @@
+// export {Display, }
+
 window.addEventListener('DOMContentLoaded', ()=> {  
      
 
@@ -10,25 +12,19 @@ window.addEventListener('DOMContentLoaded', ()=> {
     // Empty Input Popup
     const emptyInputPopup = document.querySelector('.empty-input-popup');      
 
+
+    //------- Functions for Warning Empty Input -------//
     function showEmptyInputPopup(){
         emptyInputPopup.style.display = 'block';
     }
     function closeEmptyInputPopup(){
         emptyInputPopup.style.display = 'none'
     }
-    function addTask(){
-        if(inputBox.value === ""){
-            console.log('test')
-            showEmptyInputPopup();
-        }else{
-            const newTask = new ToDoTask(inputBox.value);
-            toDoTasks.push(newTask);
-            const index = toDoTasks.indexOf(newTask);
-            newTask.createId(index);
-            Display.displayTask(index, newTask);        
-        }
-    }
 
+
+    //------- Classes -------//
+
+    //Class to create to do task and push it to the to do task array
     class ToDoTask{
         constructor(task){
             this.task = task;
@@ -37,7 +33,20 @@ window.addEventListener('DOMContentLoaded', ()=> {
             this.id = id; 
         }
     }
+
+    // Class to add to do task - Display it, Delete and Done/Undone it
     class Display{
+        static addTask(){
+            if(inputBox.value === ""){
+                showEmptyInputPopup();
+            }else{
+                const newTask = new ToDoTask(inputBox.value);
+                toDoTasks.push(newTask);
+                const index = toDoTasks.indexOf(newTask);
+                newTask.createId(index);
+                Display.displayTask(index, newTask);        
+            }
+        }
         static displayTask(index, newTask){
             let displayTask =  `
                 <div class="to-do-task-box" id="${index}">
@@ -68,12 +77,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
     }
 
 
-    // Event Listener
+    //------- Events Listener -------//
+
+    //Add task to do and display it
     addBtn.addEventListener('click', (e)=> {
         e.preventDefault();
-        addTask()        
+        Display.addTask();       
     });
    
+    // Delete task to do
     toDoContainer.addEventListener('click', (e)=>{
         if(e.target.classList.contains('to-do-btn-delete')){
             const taskBox = e.target.parentElement;
@@ -81,6 +93,8 @@ window.addEventListener('DOMContentLoaded', ()=> {
             Display.deleteTask(idToDelete);
         }
     });
+
+    // Done/undone to do task
     toDoContainer.addEventListener('click', (e)=>{
         if(e.target.classList.contains('to-do-btn-done')){
             const taskBox = e.target.parentElement;
@@ -89,11 +103,41 @@ window.addEventListener('DOMContentLoaded', ()=> {
         }
     });
 
+    // Closing popup that says input to do was empty
     document.addEventListener('click', (e)=>{
         if(e.target.classList.contains('empty-input-close-btn')){
             closeEmptyInputPopup();
         };
     });
+
+
+
+    //------- Speech Recognition js -------/
+
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    
+    const speechBtn = document.querySelector(".to-do-speech-btn");
+    
+
+    recognition.addEventListener('result', e =>{
+        const transcript = Array.from(e.results)
+            .map(results => results[0])
+            .map(results => results.transcript)
+            .join('');
+        inputBox.value = transcript;
+        
+    });
+    recognition.addEventListener('end', () =>{
+        Display.addTask();
+        speechBtn.classList.remove("rec");
+    })
+
+    speechBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        speechBtn.classList.add("rec")
+        recognition.start();
+    })
     
 });
-
