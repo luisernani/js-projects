@@ -1,13 +1,16 @@
-// export {Display, }
+//Setting Database
+let toDoTasks = JSON.parse(localStorage.getItem('toDoTasks')) || [];
+console.table('inicial', toDoTasks);
+
+function setDatabase(){
+    localStorage.setItem('toDoTasks', JSON.stringify(toDoTasks));
+}
 
 window.addEventListener('DOMContentLoaded', ()=> {  
      
-
     const inputBox = document.querySelector('.to-do-input');
     const addBtn = document.querySelector('.to-do-add-btn');
     const toDoContainer = document.querySelector('.to-do-container');    
-
-    let toDoTasks = [];
 
     // Empty Input Popup
     const emptyInputPopup = document.querySelector('.empty-input-popup');      
@@ -44,13 +47,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 toDoTasks.push(newTask);
                 const index = toDoTasks.indexOf(newTask);
                 newTask.createId(index);
-                Display.displayTask(index, newTask);        
+                Display.displayTask(newTask.id, newTask.task);
+                setDatabase();
             }
         }
         static displayTask(index, newTask){
+            // console.log(index, newTask)
             let displayTask =  `
                 <div class="to-do-task-box" id="${index}">
-                    <div class="to-do-task">${newTask.task}</div>
+                    <div class="to-do-task">${newTask}</div>
                     <button class="to-do-btn-done"><i class="fa-solid fa-check"></i></button>
                     <button class="to-do-btn-delete"><i class="fa-solid fa-trash"></i></button>
                 </div>
@@ -60,8 +65,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
             inputBox.focus();
         }
         static deleteTask(idToDelete){ 
+            // console.log(idToDelete);
             const toDelete = document.getElementById(`${idToDelete}`);
             toDelete.remove();
+            // console.log(toDoTasks[idToDelete].id)
+           
+            toDoTasks = toDoTasks.filter(item => item.id != idToDelete)
+            // console.log(deletedItem);
+
+            setDatabase();
         }
         static doneTask(idToDone){
             const toDoneParent = document.getElementById(`${idToDone}`);
@@ -73,6 +85,16 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 ToDone.innerHTML = `${ToDone.textContent}`;
             }
         
+        }
+    }
+
+    
+    if(toDoTasks != null){
+        for(let i=0; i < toDoTasks.length; i++){
+            // console.table(toDoTasks[i].id);
+            // console.table(toDoTasks[i].task);
+            // console.table(toDoTasks)
+            Display.displayTask(toDoTasks[i].id, toDoTasks[i].task);
         }
     }
 
@@ -89,7 +111,9 @@ window.addEventListener('DOMContentLoaded', ()=> {
     toDoContainer.addEventListener('click', (e)=>{
         if(e.target.classList.contains('to-do-btn-delete')){
             const taskBox = e.target.parentElement;
+            // console.log(taskBox);
             const idToDelete = taskBox.id;
+            // console.log(idToDelete);
             Display.deleteTask(idToDelete);
         }
     });
