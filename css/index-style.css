@@ -23,43 +23,118 @@ html {
 
 .hero{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content:center;
     gap: 2rem;
     padding: 15vh 10rem 5vh;
     min-height: 90vh;
 }
+
 .hero a{
     text-decoration: none;
     color: black;
 }
-
+.hero-photo img{
+    border-radius: 50%;
+    max-width: 100%;
+}
+.hero-photo{
+    flex: 1;
+}
 .hero-text{
     font-family: 'Courier Prime', monospace;
     font-size: 1.5rem;
     text-align: justify;
+    flex: 2;
 }
 
 .hero > i {
     color: black;
 }
-.hero-photo{
-    border-radius: 50%;
-    width: 50vh;
-}
+
 
 
 /* -------- MAIN ------- */
 main{
     background-color: #F1F1F1;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 2rem;
-
-    padding: 0 10rem;
+    padding: 5rem 10rem;
     min-height: 90vh;
-
     font-family: 'Courier Prime', monospace;
     font-size: 1.5rem;
 }
 
+.link-img{
+    width: 20vw;
+    border: 1px solid black;
+    box-shadow: .1rem .1rem black;
+    border-radius: .2rem;
+}
 
+.link-img:hover{
+    box-shadow: .3rem .3rem black;
+}
+.link-box:hover , a{
+    text-decoration: none;
+    color: black;
+    transform: translateY(-1rem);
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .hero  {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      flex-direction: column;
+    }
+    .hero-text{
+        font-size: 2rem;
+    }
+    
+    main{
+        padding-left: 5rem;
+        padding-right: 5rem;
+        justify-content:space-between;
+    }
+    .link-img{
+        width: 35vw;
+    }
+  }
+  /* @media only screen and (max-width: 900px) {
+    .hero {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      flex-wrap: wrap;
+    }
+    main{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    
+  } */
+
+  @media only screen and (max-width: 768px) {
+    .hero  {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    main{
+        justify-content: center;
+    }
+    .link-img{
+        width: 50vw;
+    }
+    .hero-photo{
+        max-width: 30;
+    }
+    .hero-text{
+        font-size: 1.5rem;
+        min-width: 300px;
+    }
+  }
