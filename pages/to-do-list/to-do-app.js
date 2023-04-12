@@ -23,7 +23,24 @@ window.addEventListener('DOMContentLoaded', ()=> {
     function closeEmptyInputPopup(){
         emptyInputPopup.style.display = 'none'
     }
-
+    function taskDisplayTemplate(index, task){
+        return `
+            <div class="to-do-task-box" id="${index}">
+                <div class="to-do-task">${task}</div>
+                <button class="to-do-btn-done"><i class="fa-solid fa-check"></i></button>
+                <button class="to-do-btn-delete"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            `;
+    }
+    function taskDisplayTemplateDone(index, task){
+        return `
+            <div class="to-do-task-box" id="${index}">
+                <div class="to-do-task" style="color: gray"><s><em>${task}</em></s></div>
+                <button class="to-do-btn-done"><i class="fa-solid fa-check"></i></button>
+                <button class="to-do-btn-delete"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            `;
+    }
 
     //------- Classes -------//
 
@@ -31,6 +48,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
     class ToDoTask{
         constructor(task){
             this.task = task;
+            this.done = false;
         }
         createId(id){
             this.id = id; 
@@ -48,22 +66,30 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 const index = toDoTasks.indexOf(newTask);
                 newTask.createId(index);
                 Display.displayTask(newTask.id, newTask.task);
+                console.log(newTask)
                 setDatabase();
             }
         }
         static displayTask(index, newTask){
             // console.log(index, newTask)
-            let displayTask =  `
-                <div class="to-do-task-box" id="${index}">
-                    <div class="to-do-task">${newTask}</div>
-                    <button class="to-do-btn-done"><i class="fa-solid fa-check"></i></button>
-                    <button class="to-do-btn-delete"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                `;
+            const displayTask = taskDisplayTemplate(index, newTask)
+           
             toDoContainer.innerHTML += displayTask;
             inputBox.value = "";
             inputBox.focus();
         }
+
+        static displayFromStorage(index, task){
+            let displayTaskFromStorage = "";
+
+            if(toDoTasks[index].done ?
+                    displayTaskFromStorage = taskDisplayTemplateDone(index, task)
+                    :
+                    displayTaskFromStorage = taskDisplayTemplate(index, task));
+        
+            toDoContainer.innerHTML += displayTaskFromStorage;
+        }
+
         static deleteTask(idToDelete){ 
             // console.log(idToDelete);
             const toDelete = document.getElementById(`${idToDelete}`);
@@ -78,11 +104,21 @@ window.addEventListener('DOMContentLoaded', ()=> {
         static doneTask(idToDone){
             const toDoneParent = document.getElementById(`${idToDone}`);
             const ToDone = toDoneParent.querySelector('.to-do-task');
-            console.log(ToDone);
+
+            
             if(!ToDone.querySelector('s')){
+                ToDone.style.color = 'gray';
                 ToDone.innerHTML = `<s><em>${ToDone.textContent}</em></s>`;
+                toDoTasks[idToDone].done = true;
+                console.log(toDoTasks);
+                setDatabase();
+                
             }else{
+                ToDone.style.color = 'black';
                 ToDone.innerHTML = `${ToDone.textContent}`;
+                toDoTasks[idToDone].done = false;
+                console.log(toDoTasks);
+                setDatabase();
             }
         
         }
@@ -93,8 +129,9 @@ window.addEventListener('DOMContentLoaded', ()=> {
         for(let i=0; i < toDoTasks.length; i++){
             // console.table(toDoTasks[i].id);
             // console.table(toDoTasks[i].task);
-            // console.table(toDoTasks)
-            Display.displayTask(toDoTasks[i].id, toDoTasks[i].task);
+            // console.table(toDoTasks[i].done);
+            // console.table(toDoTasks);
+            Display.displayFromStorage(toDoTasks[i].id, toDoTasks[i].task);
         }
     }
 
