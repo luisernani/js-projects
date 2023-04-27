@@ -16,10 +16,18 @@ header{
     padding: 15vh 10rem 0;
     background-color: #FFE162;
     color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 header > h1{
-    text-align: center;
     font-size: 3rem;
+}
+
+.instructions-div ul{
+    padding: 1rem 0;
+    list-style: none;
+    font-size: 1rem;
 }
 
 main{
@@ -28,7 +36,6 @@ main{
     min-height: 70vh;
     display: flex;
     justify-content: center;
-    
 }
 
 .main-container{
@@ -127,6 +134,25 @@ button:active{
 }
 
 
+/* -------- Github Project Link ------- */
+.github-project-div{
+    padding: 2.5vh 10rem 10vh;
+    background-color: #FFE162;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.github-project-div a{
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: black;
+}
+
+.github-project-div a:hover{
+    color: #21209C;
+}
+
+
 /* -------- email POPUP ------- */
 .empty-input-popup{
     display: none;
@@ -138,8 +164,8 @@ button:active{
     height: 7rem;
     overflow: auto;
     background-color:#F1F1F1;
-    border: 1px solid black;
-    box-shadow: 10px 10px black;
+    border: 5px solid #D72323;
+    box-shadow: .5rem .5rem black;
 }
 .empty-input-popup-text{
     display: flex;
@@ -169,4 +195,66 @@ button:active{
 
 .empty-input-close-btn:active{
     transform: translateY(4px);
+}
+
+@media only screen and (max-width: 1024px){
+    header{
+        padding: 15vh 5rem 0;
+        background-color: #FFE162;
+        color: black;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    .to-do-input{
+        font-size: .8rem;
+    }
+    main{
+        padding: 1rem 10rem;
+    }
+    
+    .main-container{
+        width: 100%;
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+    .empty-input-popup{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    header{
+        padding: 15vh 1rem 0;
+        background-color: #FFE162;
+        color: black;
+    }
+    header h1{
+        font-size: 1.5rem;
+    }
+    .to-do-input{
+        font-size: .8rem;
+    }
+    main{
+        padding: 1rem 1rem;
+        
+    }
+    
+    .main-container{
+        width: 100%;
+        padding: 0 1rem;
+        margin: 0;
+    }
+    .empty-input-popup{
+        padding: 0;
+        margin: 0;
+    }
+    .github-project-div{
+        padding: 2.5vh 1.5rem 10vh;
+    }
+    .github-project-div a{
+        font-size: 1rem;
+    }
 }

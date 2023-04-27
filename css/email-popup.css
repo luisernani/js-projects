@@ -11,8 +11,8 @@
     height: 7rem;
     overflow: auto;
     background-color:#F1F1F1;
-    border: 1px solid black;
-    box-shadow: .1rem .1rem black;
+    border: 5px solid #21209C;
+    box-shadow: .5rem .5rem black;
     border-radius: .2rem;
 }
 .email-popup-text{
@@ -45,3 +45,15 @@
 .email-popup-close-btn:active{
     transform: translateY(1rem);
 }
+
+@media only screen and (max-width: 1024px) {
+    .email-popup{
+        width: 80%;
+        left: 10%;
+        text-align: center;
+        
+    }
+    .email-popup-close-btn{
+        margin-top: 2rem;
+    }
+  }

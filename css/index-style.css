@@ -93,6 +93,9 @@ main{
       padding-right: 5rem;
       flex-direction: column;
     }
+    .hero-photo {
+        padding: 0 5rem;
+    }
     .hero-text{
         font-size: 2rem;
     }
@@ -106,24 +109,18 @@ main{
         width: 35vw;
     }
   }
-  /* @media only screen and (max-width: 900px) {
-    .hero {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      flex-wrap: wrap;
-    }
-    main{
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-    
-  } */
 
   @media only screen and (max-width: 768px) {
     .hero  {
         padding-left: 2rem;
         padding-right: 2rem;
       }
+    .hero-photo {
+        padding: 0 2rem;
+    }
+    .hero-text{
+        font-size: 2rem;
+    }
     main{
         justify-content: center;
     }
