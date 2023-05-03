@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick me a Song</title>
+
+    <!-- Favion -->
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7869d3269e.js" crossorigin="anonymous"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- my js -->
+    <script src="../../scripts/navbar.js"></script>
+    <script src="../../scripts/popup.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../../css/navbar-footer.css">
+    <link rel="stylesheet" href="../../css/email-popup.css">
+    <link rel="stylesheet" href="pickmeasong.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="home-logo"><a href="../../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="email-btn"><i class="fa-solid fa-envelope"></i></li>
+            <li class="social-link"><a target="_blank" href="https://github.com/luisernani"><i class="devicon-github-original-wordmark"></i></a></li>
+            <li class="social-link"><a target="_blank" href="https://www.linkedin.com/in/luis-ernani-533ab09a/"><i class="devicon-linkedin-plain"></i></a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Pick me a Song</h1>
+    </header>
+    
+    <main>
+    <div class="menu-container">
+        <ul>
+            <li><label><input type="radio" name="radioInput" value="grunge"> Grunge</label></li>
+            <li><label><input type="radio" name="radioInput" value="classic-rock"> Classic Rock</label></li>
+            <li><label><input type="radio" name="radioInput" value="modern-rock"id=""> Modern Rock</label></li>                
+            <li><label><input type="radio" name="radioInput" value="pop-punk"id=""> Pop Punk</label></li>
+            <li><label><input type="radio" name="radioInput" value="chill-out"id=""> Chill Out</label></li>
+        </ul>
+        <button id="pickBtn" type="submit">Pick me a Song</button>
+    </div>
+    <div class="outPut">
+        <img class="output-logo" src="img/pick-me-a-song-lupe.svg" alt="initialImage">
+    </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li class="footer-developer"><h2>Powered by Luis Ernani</h2></li>
+
+            <li class="email-btn"><i class="fa-solid fa-envelope"></i></li>
+
+
+            <li class="footer-social-link"><a target="_blank" href="https://github.com/luisernani"><i class="devicon-github-original-wordmark"></i></a></li>
+            <li class="footer-social-link"><a target="_blank" href="https://www.linkedin.com/in/luis-ernani-533ab09a/"><i class="devicon-linkedin-plain"></i></a></li>
+        </ul>
+    </footer>
+
+
+    <!-- email Popup -->
+    <div class="email-popup">
+        <div class="email-popup-text">
+            <span class="email-popup-close-btn">&times;</span>
+            <h2>Email me on <em class="email-color">luisernani87@gmail.com</em></h2>
+        </div>
+    </div>
+</body>
+</html>
