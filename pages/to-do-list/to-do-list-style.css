@@ -258,3 +258,16 @@ button:active{
         font-size: 1rem;
     }
 }
+
+/* -------- email POPUP media query------- */
+@media only screen and (max-width: 1024px) {
+    .empty-input-popup{
+        width: 80%;
+        left: 10%;
+        text-align: center;
+        
+    }
+    .empty-input-close-btn{
+        margin-top: 2rem;
+    }
+  }
