@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pick me a Song</title>
 
-    <!-- Favion -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
 
     <!-- Font Awesome -->
@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="../../css/navbar-footer.css">
     <link rel="stylesheet" href="../../css/email-popup.css">
     <link rel="stylesheet" href="pickmeasong.css">
+
+    <!-- app javaScript -->
+    <script type="module" src="app.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -40,15 +43,15 @@
     <main>
     <div class="menu-container">
         <ul>
-            <li><label><input type="radio" name="radioInput" value="grunge"> Grunge</label></li>
-            <li><label><input type="radio" name="radioInput" value="classic-rock"> Classic Rock</label></li>
-            <li><label><input type="radio" name="radioInput" value="modern-rock"id=""> Modern Rock</label></li>                
-            <li><label><input type="radio" name="radioInput" value="pop-punk"id=""> Pop Punk</label></li>
-            <li><label><input type="radio" name="radioInput" value="chill-out"id=""> Chill Out</label></li>
+            <li><label><input type="radio" class="genreInput" name="radioInput" value="grunge">Grunge</label></li>
+            <li><label><input type="radio" class="genreInput" name="radioInput" value="classic-rock">Classic Rock</label></li>
+            <li><label><input type="radio" class="genreInput" name="radioInput" value="modern-rock">Modern Rock</label></li>                
+            <li><label><input type="radio" class="genreInput" name="radioInput" value="pop-punk">Pop Punk</label></li>
+            <li><label><input type="radio" class="genreInput" name="radioInput" value="chill-out">Chill Out</label></li>
         </ul>
-        <button id="pickBtn" type="submit">Pick me a Song</button>
+        <button class="pickBtn" type="submit">Pick me a Song</button>
     </div>
-    <div class="outPut">
+    <div class="outPutDiv">
         <img class="output-logo" src="img/pick-me-a-song-lupe.svg" alt="initialImage">
     </div>
     </main>
